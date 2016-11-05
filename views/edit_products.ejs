@@ -1,0 +1,54 @@
+<%- include layouts/header.ejs %>
+
+        <div class="page-data">
+            
+            <form method="post" action="/products/edit/<%=data[0].ProductId%>">
+                <table cellpadding="11">
+                <tr>
+                    <td class="label">category</td>
+                    <td>:
+                         <select name="CategoryId">
+                         <% for(var i = 0; i < data1.length;i++){ %>
+                         <option value="<%=data1[i].CategoryId%>" <%= data1[i].CategoryId == data[0].CategoryId ? 'selected' : ' '%> > <%=data1[i].Name%></option>
+                         <% } %> 
+                    </select>
+                    </td></tr><br>
+                 
+                <tr>
+                    <td class="label">Name</td><td>: <input type="text" name="Name" value="<%=data[0].Name%>" required></td>
+                </tr>
+                <tr>
+                    <td class="label">Description</td><td>: <input type="text" name="Description" value="<%=data[0].Description%>" required></td>
+                </tr> 
+                <tr>
+                    <td class="label">Price</td><td>: <input type="text" value="<%=data[0].Price%>" name="Price" required></td>
+                </tr>
+                  <tr>
+                    <td class="label">Quantity</td><td>: <input type="text" name="Quantity" value="<%=data[0].Quantity%>" required></td>
+                 </tr>
+                  <tr>
+                    <td class="label">Existing Image</td><td>: <img src="/../images/<%=data[0].Image%>" name = "eimg"></td>
+                 </tr>
+                 <tr>
+                    <td class="label">Image</td><td>: <input type="file" name="Image"  size = "50" value="<%=data[0].Image%>" required></td>
+                 </tr>
+                 <tr>
+                    <td class="label">New Image</td><td>:<img src="/../images/"> </td>
+                 </tr>
+                 <tr>
+                    <td class="label">Status</td><td>: <input type="checkbox" name="Status" value="active"  <% if (data[0].Status == 'active') { %> checked <% } %></td>
+                 </tr>
+                   
+                 <tr>
+                    <td class="label"></td>
+                    <td>
+                        &nbsp; <input type="submit" name="submit" value="Save">
+                       <input type="button" name="cancel" value="Cancel" class="cancel" onClick="cancelAddProduct()">
+                    </td>
+                 </tr>
+                </table>
+            </form>
+            
+        </div>
+        
+<%- include layouts/footer.ejs %>

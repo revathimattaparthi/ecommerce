@@ -1,0 +1,46 @@
+<%- include layouts/header.ejs %>
+
+        <div class="page-data">
+            
+            <form method="post" action="/orders/add">
+                <table cellpadding="11">
+                <tr>
+                    <td class="label">product</td>
+                    <td>:
+                     <select name="ProductId">
+                     <% for(var i = 0; i < productsData.length;i++){ %>
+
+                        <option value="<%=productsData[i].ProductId%>"> <%=productsData[i].Name%>  <%=productsData[i].Price%> <%=productsData[i].Quantity%> </option>
+                        <% } %>
+                        </select>
+                        </td></tr><br>
+
+                    <td class="label">user</td>
+                    <td>:
+                     <select name="UserId">
+                        <% for(var i = 0; i < userData.length;i++){ %>
+                        
+                        <option value="<%=userData[i].UserId%>"> <%=userData[i].Name%></option>
+                        <% } %> 
+                    </select>
+                    </td></tr><br>
+                   
+                <tr>
+                    <td class="label">Quantity</td><td>: <input type="text" name="Quantity" required></td> </tr>
+                
+               
+                 <tr>
+                    <td class="label"></td>
+                    <td>
+                        &nbsp; <input type="submit" name="submit" value="Save">
+
+                       <input type="button" name="cancel" value="Cancel" class="cancel" onClick="cancelAddOrder()">
+                    </td>
+                 </tr>
+                </table>
+            </form>
+            
+        </div>
+        
+<%- include layouts/footer.ejs %>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             

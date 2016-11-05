@@ -1,0 +1,22 @@
+{
+  "name": "application-name",
+  "version": "0.0.1",
+  "private": true,
+  "scripts": {
+    "start": "node app.js"
+  },
+  "dependencies": {
+    "body-parser": "~1.15.1",
+    "cookie-parser": "~1.4.3",
+    "date-time": "^1.1.0",
+    "debug": "~2.2.0",
+    "ejs": "^1.0.0",
+    "express": "3.5.1",
+    "express-myconnection": "1.0.4",
+    "fs": "0.0.2",
+    "jade": "*",
+    "morgan": "~1.7.0",
+    "mysql": "2.2.0",
+    "serve-favicon": "~2.3.0"
+  }
+}

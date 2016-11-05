@@ -1,0 +1,57 @@
+<%- include layouts/header.ejs %>
+
+        <div class="page-data">
+         <div class="data-btn">
+           <button onClick="addCategory();">+ Add</button>
+         </div>
+         <div class="data-table">
+            <table border="1" cellpadding="7" cellspacing="7">
+                <tr>
+                    <th width="50px">No</th>
+                   <th>CategoryId</th> -->
+                    <th>Name</th>
+                    <th>Description</th>
+                    <th>CreatedOn</th>
+                    <th>UpdatedOn</th>
+                    <th>Status</th>
+                   <!--  <th>Quantity</th>
+                     <th>Cid</th> --> 
+                    <th width="120px">Action</th>
+                </tr>
+                               
+                <% if(data.length){ 
+                                
+                 for(var i = 0;i < data.length;i++) { %>
+                 
+                <tr>
+                    <td><%=(i+1)%></td>
+                    <td><%=data[i].CategoryId%></td> -->
+                    <td><%=data[i].Name%></td>
+                    <td><%=data[i].Description%></td>
+                    <td><%=data[i].CreatedOn%></td>
+                    <td><%=data[i].UpdatedOn%></td>
+                    <td><%=data[i].Status%></td>
+                    <!-- <td><%=data[i].quantity%></td>
+                    <td><%=data[i].cid%></td> --> -->
+                    <td>
+                        <a class="a-inside edit" href="../categories/edit/<%=data[i].CategoryId%>">Edit</a>
+                       
+                        <a class="a-inside delete" href="../categories/delete/<%=data[i].CategoryId%>">Delete</a>
+                       
+                    </td>
+                </tr>
+            <% }
+            
+             }else{ %>
+                 <tr>
+                    <td colspan="3">No user</td>
+                 </tr>
+            <% } %>
+                
+                              
+                
+            </table>
+         </div>
+        </div>
+        
+<%- include layouts/footer.ejs %>
